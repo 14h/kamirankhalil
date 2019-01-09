@@ -1,0 +1,13 @@
+#Footer p {
+    font-family: "proxima-nova";
+    font-size: 15px;
+    line-height: 1.47em;
+    font-weight: 400;
+    font-style: normal;
+    color: #454545;
+}
+#Footer{
+    /* position: fixed; */
+    bottom: 1vh;
+    left: 5vh;
+}

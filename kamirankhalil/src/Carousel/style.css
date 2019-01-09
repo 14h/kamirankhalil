@@ -1,0 +1,82 @@
+#Carousel{
+    margin-top: 80px;
+}
+.slider {
+    max-width: 95vw;
+    height: 1000px;
+    max-height:80vh;
+    margin: 20px auto;
+    position: relative;
+  }
+  .slide1,.slide2,.slide3,.slide4,.slide5 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  .slide1 {
+    background: url(https://i.imgur.com/Zv4Pdg2.jpg)no-repeat top;
+        background-size: cover;
+      animation:fade 15s infinite;
+  -webkit-animation:fade 15s infinite;
+  
+  } 
+  .slide2 {
+    background: url(https://i.imgur.com/LrHdf29.jpg)no-repeat center;
+        background-size: cover;
+      animation:fade2 15s infinite;
+  -webkit-animation:fade2 15s infinite;
+  }
+  .slide3 {
+      background: url(https://i.imgur.com/zyJ35FJ.jpg)no-repeat center;
+        background-size: cover;
+
+      animation:fade3 15s infinite;
+  -webkit-animation:fade3 15s infinite;
+  }
+  .slide4 {
+    background: url(https://i.imgur.com/PAgn737.jpg)no-repeat center;
+      background-size: cover;
+
+    animation:fade4 15s infinite;
+-webkit-animation:fade4 15s infinite;
+}
+  @keyframes fade
+  {
+    0%   {opacity:1}
+    25% { opacity: 0}
+    50% { opacity: 0}
+    75% { opacity: 0}
+    100% { opacity: 1}
+  }
+  @keyframes fade2
+  {
+    0%   {opacity:0}
+    25% { opacity: 1}
+    50% { opacity: 0 }
+    75% { opacity: 0 }
+    100% { opacity: 0}
+  }
+  @keyframes fade3
+  {
+    0%   {opacity:0}
+    25% { opacity: 0}
+    50% { opacity: 0 }
+    75% { opacity: 1 }
+    100% { opacity: 0}
+  }
+  @keyframes fade4
+  {
+    0%   {opacity:0}
+    25% { opacity: 0}
+    50% { opacity: 1 }
+    75% { opacity: 0 }
+    100% { opacity: 0}
+  }
+
+  @media screen and (max-width : 1000px ){
+    .slider{
+      height: 600px;
+      max-height:70vh ;
+      margin-top: 100px;
+    }
+  }

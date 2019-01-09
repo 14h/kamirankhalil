@@ -1,0 +1,59 @@
+#Sketch{
+    margin-top: 20px;
+}
+figcaption{
+    color: rgba(255, 255, 255, 0.75);
+}
+.content_13hv8io {
+
+    margin-top: 10px;
+}
+.react-photo-gallery--gallery img { 
+    /* padding: 20px; */
+}
+.react-photo-gallery--gallery{
+    padding-left:10%;
+    padding-right:10%;
+}
+.breadcrumbs{
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+.breadcrumbs h3{
+    color:#8c939e;
+}
+.breadcrumbs a{
+    text-decoration: none;
+    color: #8c939e;
+}
+.breadcrumbs a:link{
+    color:#8c939e; 
+}
+.breadcrumbs a:hover{
+    color:#8c939e;
+}
+.breadcrumbs a:visited{
+    color:#8c939e;
+}
+
+#Sketch img{
+    width: 40%;
+    height: auto;
+    margin-right: 5%!important;
+    margin-left: 5%!important;
+    margin-bottom: 8%!important;
+}
+.container_9tizg4{
+    z-index: 9999999!important;
+}
+@media screen and (max-width:768px){
+    #Sketch img{
+        /* width: 90%;
+        height: auto;
+        margin-left: 5%!important; */
+
+    }
+    h2{
+        font-size: 1.7em;
+    }
+}
