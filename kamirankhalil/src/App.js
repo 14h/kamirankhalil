@@ -34,12 +34,8 @@ class App extends Component {
     return (
       <div className="App">
         <NavigationBar toggleLanguage={this.toggleLanguage} language={this.state.language}  />
-        <Route exact path="/" render={(match) => (
-            <Redirect to="/EN/"/>
-        )}/>
-        <Route exact path="/:language/" render={()=>(
-          <Carousel />
-        )}></Route>
+        <Route exact path="/" component={ ()=>(<Redirect to="/EN/"/>) }/>
+        <Route exact path="/:language/" component={ ()=>(<Carousel />) }></Route>
         <Route exact path="/:language/Painting/" render={({match})=>(
           <Painting  language={this.state.language} language2={match.params.language}/>
         )}></Route>

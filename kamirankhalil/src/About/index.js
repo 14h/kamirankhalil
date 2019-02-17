@@ -12,12 +12,30 @@ class About extends Component{
 
     };
   }
-  
+  componentDidMount(){
+    (function smoothscroll(){
+        var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+        if (currentScroll > 0) {
+              window.requestAnimationFrame(smoothscroll);
+              window.scrollTo (0,currentScroll - (currentScroll/5));
+        }
+    })();
+    const About = document.getElementById('About');
+    window.setTimeout(()=>{
+      About.style.opacity = 1;
+    }, 200);
+  }
   
   render() {
     
     return (
-      <div id="About">
+      <div 
+        id="About"
+        style={{
+          transition      : 'all 0.5s linear',
+          opacity         : 0,
+        }}
+      >
       {console.log('language2 is ', this.props.language2)}
       
       {(this.props.language2 ==='EN')?(

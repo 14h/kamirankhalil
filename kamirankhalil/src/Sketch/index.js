@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
 import './style.css'
-import {Link} from 'react-router-dom';
 
 import Gallery from 'react-photo-gallery';
-import Measure from 'react-measure';
 import Lightbox from 'react-images';
 
 
@@ -39,72 +37,90 @@ const photos = [
   { src: 'https://i.imgur.com/I1D1rvw.jpg', width: 577, height: 608 , caption: '74x70 cm  oil on paper ,  2015'},
   
   ];
-  class Sketch extends Component{
-      // handleClose = () => {
-      //   isOpen: false
-      // };
-    
-    
-      constructor() {
-          super();
-          this.state = { currentImage: 0 };
-          this.closeLightbox = this.closeLightbox.bind(this);
-          this.openLightbox = this.openLightbox.bind(this);
-          this.gotoNext = this.gotoNext.bind(this);
-          this.gotoPrevious = this.gotoPrevious.bind(this);
-        }
-        openLightbox(event, obj) {
-          this.setState({
-            currentImage: obj.index,
-            lightboxIsOpen: true,
-          });
-        }
-        closeLightbox() {
-          this.setState({
-            currentImage: 0,
-            lightboxIsOpen: false,
-          });
-        }
-        gotoPrevious() {
-          this.setState({
-            currentImage: this.state.currentImage - 1,
-          });
-        }
-        gotoNext() {
-          this.setState({
-            currentImage: this.state.currentImage + 1,
-          });
-        }
-        render() {
-          return (
-            <div>
-     
+  export default class Sketch extends Component{
+    constructor() {
+      super();
+      this.state = { currentImage: 0 };
+    }
+    openLightbox = (event, obj) => {
+      this.setState({
+        currentImage: obj.index,
+        lightboxIsOpen: true,
+      });
+    }
+    closeLightbox = () => {
+      this.setState({
+        currentImage: 0,
+        lightboxIsOpen: false,
+      });
+    }
+    gotoPrevious = () => {
+      this.setState({
+        currentImage: this.state.currentImage - 1,
+      });
+    }
+    gotoNext = () => {
+      this.setState({
+        currentImage: this.state.currentImage + 1,
+      });
+    }
+    componentDidMount(){
+      (function smoothscroll(){
+          var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+          if (currentScroll > 0) {
+                window.requestAnimationFrame(smoothscroll);
+                window.scrollTo (0,currentScroll - (currentScroll/5));
+          }
+      })();
+      const sketch = document.getElementById('sketch');
+      window.setTimeout(()=>{
+        sketch.style.opacity = 1;
+      }, 200);
+    }
+    render() {
+      return (
+        <div id='sketch'
+        style={{
+          transition      : 'all 0.5s linear',
+          opacity         : 0,
+        }}
+        >
+          <div className="breadcrumbs">
+            <h3>{(this.props.language2 ==='EN')?("Paintings"):("Gemälde")}</h3>
+          </div>
+          <div
+            style={{
+              display         : 'flex',
+              flexDirection   : 'row',
+              flexWrap        : 'wrap',
+              justifyContent  : 'space-around',
+              alignItems      : 'center',
+            }}
+          >
+            { photos.map( ( photo, index ) => (
+              <img
+                key={ `painting${index}` }
+                src={ photo.src }
+                style={ {
+                  width     : '40vw',
+                  height    : 'auto',
+                  marginTop  : '20px',
+                  cursor    : 'pointer',
+                } }
+                onClick={ ()=> this.setState( { currentImage: index, lightboxIsOpen: true } ) } 
+              />
+            ) ) }
+          </div>
+          <Lightbox images={photos}
+            onClose={this.closeLightbox}
+            onClickPrev={this.gotoPrevious}
+            onClickNext={this.gotoNext}
+            currentImage={this.state.currentImage}
+            isOpen={this.state.lightboxIsOpen}
+            backdropClosesModal={true}
+          />
+        </div>
+      )
+    }
+}
 
-            {/* <PhotoSwipeGallery items={items} options={options} thumbnailContent={(item) => {
-              return (
-                <img src={item.src} width={120} height={90}/>
-              );
-            }}/> */}
-            {/* <PhotoSwipe isOpen={isOpen} items={items}  onClose={()=>this.handleClose}/> */}
-              <div className="breadcrumbs">
-                <h3>{(this.props.language2 ==='EN')?("Sketches"):("Zeichnungen")}</h3>
-              </div>
-              <div id="Sketch">
-                <Gallery photos={photos} onClick={this.openLightbox} />
-                <Lightbox images={photos}
-                  onClose={this.closeLightbox}
-                  onClickPrev={this.gotoPrevious}
-                  onClickNext={this.gotoNext}
-                  currentImage={this.state.currentImage}
-                  isOpen={this.state.lightboxIsOpen}
-                  backdropClosesModal={true}
-                />
-              </div>
-            </div>
-          )
-        }
-  }
-  
-  
-  export default Sketch
-  
