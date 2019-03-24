@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 import './style.css'
-
-import Gallery from 'react-photo-gallery';
 import Lightbox from 'react-images';
 
 
@@ -86,7 +84,7 @@ const photos = [
         }}
         >
           <div className="breadcrumbs">
-            <h3>{(this.props.language2 ==='EN')?("Paintings"):("Gemälde")}</h3>
+            <h3>{(this.props.language2 ==='EN')?("Sketches"):("Sketches")}</h3>
           </div>
           <div
             style={{

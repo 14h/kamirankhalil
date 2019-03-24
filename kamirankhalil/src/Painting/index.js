@@ -21,10 +21,10 @@ const photos = [
     { src: 'https://i.imgur.com/Rxy6nUy.jpg', width: 283, height: 566 , caption:'280x140 cm charcoal on canvas 2011'},
     { src: 'https://i.imgur.com/4f5181U.jpg', width:674 , height: 433 , caption:'190x120 cm  oil on canvas,2015' },
     { src: 'https://i.imgur.com/zQkxItw.jpg', width: 674 , height: 447, caption:'160x240 cm  oil on canvas, 2011' },
-    { src: 'https://i.imgur.com/lQ49FKQ.jpg', width: 568, height: 566, caption:'150x150 cm  oil on canvas,2010' },
+    // { src: 'https://i.imgur.com/lQ49FKQ.jpg', width: 568, height: 566, caption:'150x150 cm  oil on canvas,2010' },
     { src: 'https://i.imgur.com/7FsRwd1.jpg', width:557 , height: 566 , caption:'150x150cm  oil on canvas, 2010' },
     { src: 'https://i.imgur.com/BtZ7HxS.jpg', width: 563, height: 566 , caption:'150x150 cm   oil on canvas,2010'},
-    { src: 'https://i.imgur.com/EST2pk2.jpg', width:566 , height: 566 , caption:'150x150cm  oil on canvas, 2011'},
+    // { src: 'https://i.imgur.com/EST2pk2.jpg', width:566 , height: 566 , caption:'150x150cm  oil on canvas, 2011'},
   ];
 
   export default  class Paintings extends Component{

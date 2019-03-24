@@ -1,8 +1,5 @@
 import React, {Component} from 'react';
 import './style.css'
-import {Link} from 'react-router-dom';
-
-
 
 class About extends Component{
   constructor(props) {
@@ -36,7 +33,6 @@ class About extends Component{
           opacity         : 0,
         }}
       >
-      {console.log('language2 is ', this.props.language2)}
       
       {(this.props.language2 ==='EN')?(
       <table>
@@ -57,15 +53,23 @@ class About extends Component{
         <tr><td/><td><h1>Solo Exhibition</h1></td></tr>
 
         <tr>
-          <td>2011</td>
-          <td>Gallery Art House / Damascus ( Syria)</td>
+          <td>2019</td>
+          <td>"With illusions" Lawrence Gallery,  Berlin  (Germany )</td>
         </tr>
         <tr>
           <td>2015</td>
-          <td>Gallery Khawatem Art & Jewelry / Beirut (Libanon)
-        </td>
+          <td>Gallery Khawatem Art & Jewelry / Beirut (Libanon)</td>
         </tr>
+        <tr>
+          <td>2011</td>
+          <td>Gallery Art House / Damascus ( Syria)</td>
+        </tr>
+        
         <tr><td/><td><h1>Shared Exhibition <span className="auswahl">(selection)</span></h1></td></tr>
+        <tr>
+          <td>2019</td>
+          <td>"Erde der Fremden " bei FPS, Berlin</td>
+        </tr>
         <tr>
           <td>2018</td>
           <td>Konsthallen Sandviken / Sweden</td>
@@ -130,7 +134,6 @@ Syria)</td>
           <td>Geboren 1986 in Aleppo,Syrien</td>
           <td><br/>Lebt und arbeitet in Berlin.</td>
         </tr>
-        {/* <p>Geboren 1986 in Aleppo,Syrien</p> */}
         <tr>
           <td>2016-2017</td>
           <td>Studium/ Meisterschüler an der UDK ( Bildende Kunst) -Berlin</td>
@@ -140,17 +143,24 @@ Syria)</td>
           <td>Absolvent der Universität der Bildende Künste — Damaskus</td>
         </tr>
         <tr><td/><td><h1>Einzelausstellungen</h1></td></tr>
-
+        
+        <tr>
+          <td>2019</td>
+          <td>"Mit Illusionen" Lawrence Galerie ,  Berlin  (Deutschland)</td>
+        </tr>
+        <tr>
+          <td>2015</td>
+          <td>Galerie Khawatem Art & Jewelry / Beirut/Libanon</td>
+        </tr>
         <tr>
           <td>2011</td>
           <td>Galerie Art House / Damaskus</td>
         </tr>
-        <tr>
-          <td>2015</td>
-          <td>Galerie Khawatem Art & Jewelry / Beirut/Libanon
-        </td>
-        </tr>
         <tr><td/><td><h1>Gruppenausstellungen & Workshops <span className="auswahl">(Auswahl)</span></h1></td></tr>
+        <tr>
+          <td>2019</td>
+          <td>"Erde der Fremden " bei FPS, Berlin</td>
+        </tr>
         <tr>
           <td>2018</td>
           <td>Konsthallen Sandviken “ Syrian Aesthetical Scream “ / Schweden</td>
